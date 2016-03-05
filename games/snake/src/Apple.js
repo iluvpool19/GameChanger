@@ -9,7 +9,7 @@ function Apple($el, size, controller) {
     this.x = Math.floor(Math.random() * $el.height() / size);
     this.y = Math.floor(Math.random() * $el.height() / size);
     socket.emit('appleGenerate', [this.x, this.y])
-    console.log('emitted: ', [this.x, this.y]);
+    console.log('emitted apple loc: ', [this.x, this.y]);
   } else {
     socket.on('appleGenerate', position => {
       console.log('controller heard: ', position);

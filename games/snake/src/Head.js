@@ -70,7 +70,7 @@ Head.prototype.die = function() {
 }
 
 Head.prototype.checkBorder = function() {
-  if (this.x > this.elGrid || this.x < 0 || this.y > this.elGrid || this.y < 0) {
+  if (this.x > this.elGrid-1 || this.x < 0 || this.y > this.elGrid-1 || this.y < 0) {
     return false
   } else {
     return true

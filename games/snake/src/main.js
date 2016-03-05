@@ -2,14 +2,14 @@
 $(document).ready(function() {
   var controller = $(location).attr('pathname').slice(1) === 'controller'
   var scale = 1;
-  var sizeScale = .25;
+  var sizeScale = 0.25;
   var gridSize = 200;
   var gridPositionX = 9;
   var gridPositionY = 9;
   const size = 50;
 
   if (controller) {
-    scale = .5;
+    scale = 0.5;
     gridPositionY = 9;
     gridPositionX = 200;
   }
