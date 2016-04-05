@@ -95,7 +95,7 @@ function getDirectories(srcPath) {
 
 app.get('/controller', (req, res) => {
   console.log(Sockets.roomsObj);
-  if(!Sockets.roomsObj[`/${req.query.id}`] || Sockets.roomsObj[`/${req.query.id}`].connections <= 0) {
+  if(!Sockets.roomsObj[`/${req.query.id}`] || Sockets.roomsObj[`/${req.query.id}`].connections <= 1) {
     const q = `/${req.query.id}`;
     let prof = '';
     Sockets.startSocket(q, io);
