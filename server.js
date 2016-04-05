@@ -7,7 +7,9 @@ const fs = require('fs');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
-const mongoURI = 'mongodb://localhost/GameUsers'; //ip-172-31-43-60.us-west-2.compute.internal';
+const mongoURI = 'mongodb://heroku_6h1mczd6:3fkt5t8h1r4tk87n7nsdljuo2v@ds011890.mlab.com:11890/heroku_6h1mczd6'// 'mongodb://localhost/GameUsers'; //ip-172-31-43-60.us-west-2.compute.internal';
+
+// const mongoURI = 'mongodb://localhost/GameUsers'; //ip-172-31-43-60.us-west-2.compute.internal';
 const cors = require('cors');
 const UserCtrl = require('./authenticate/userController');
 const User = require('./authenticate/userModel');
@@ -117,7 +119,7 @@ app.get('/controller', (req, res) => {
 app.get('/game', (req, res) => {
   let nameOfGame = Sockets.roomsObj['/' + req.query.id].gameName;
   res.sendFile(path.join(__dirname, `/games/${nameOfGame}/index.html`));
-}); 
+});
 
 app.get('/shapes', (req, res) => {
   res.sendFile(path.join(__dirname, '/games/shapes/index.html'));
