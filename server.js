@@ -117,7 +117,7 @@ app.get('/controller', (req, res) => {
 app.get('/game', (req, res) => {
   let nameOfGame = Sockets.roomsObj['/' + req.query.id].gameName;
   res.sendFile(path.join(__dirname, `/games/${nameOfGame}/index.html`));
-});
+}); 
 
 app.get('/shapes', (req, res) => {
   res.sendFile(path.join(__dirname, '/games/shapes/index.html'));
