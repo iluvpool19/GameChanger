@@ -1,0 +1,17 @@
+body {
+  padding: 0;
+  margin: 0;
+  /*background-color: #32c9d6;*/
+}
+#board {
+  /*background-color: #32c9d6;*/
+}
+
+.square {
+  position: relative;
+}
+
+.shape {
+  draggable: true;
+  z-index: 1;
+}

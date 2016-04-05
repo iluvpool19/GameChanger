@@ -1,0 +1,41 @@
+{
+  "name": "Space Invaders",
+  "description": "Shoot aliens down.",
+  "controlObject": {
+    "alienSize": {
+      "type": "range",
+      "min": 0.2,
+      "max": 3.0,
+      "step": 0.2,
+      "value": 1.0
+    },
+    "shipSize": {
+      "type": "range",
+      "min": 0.2,
+      "max": 3.0,
+      "step": 0.2,
+      "value": 1.0
+    },
+    "laserSize": {
+      "type": "range",
+      "min": 0.1,
+      "max": 1.5,
+      "step": 0.1,
+      "value": 1.0
+    },
+    "laserSpeed": {
+      "type": "range",
+      "min": 0.1,
+      "max": 5,
+      "step": 0.25,
+      "value": 1.0
+    },
+    "alienSpeed": {
+      "type": "range",
+      "min": 0.1,
+      "max": 5,
+      "step": 0.25,
+      "value": 1.0
+    }
+  }
+}

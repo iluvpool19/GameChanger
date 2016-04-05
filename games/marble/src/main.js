@@ -52,9 +52,9 @@ function init() {
   h = window.innerHeight;
   $('#board').height(h);
   $('#board').width(w);
-  // $('#board').css({
-  //   "background-color": "#32c9d6"
-  // });
+  $('#board').css({
+    "background-color": "white"
+  });
 
 
   var holeSize = 100 * (1 + 0.5);
