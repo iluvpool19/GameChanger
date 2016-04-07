@@ -30,5 +30,6 @@
       "step": 100,
       "value": 500
     }
-  }
+  },
+  "dataControlObject": ["Distance", "Moves"]
 }

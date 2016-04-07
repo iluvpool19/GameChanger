@@ -23,5 +23,6 @@
       "step": 0.10,
       "value": 1
     }
-  }
+  },
+  "dataControlObject": ["Distance"]
 }

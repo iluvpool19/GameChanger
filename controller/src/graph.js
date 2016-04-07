@@ -11,24 +11,29 @@ var chartVariable;
 var graphButtonsOnPage = false;
 
 
-socket.on('chartData', data => {
-  if (!graphButtonsOnPage) {
-    var keys = Object.keys(data);
-    keys.forEach(key => {
-      var button = "<button class='graphButtons btn btn-default' id=\"" + key + "\" onclick='changeData(\"" + key + "\")'>" + key + "</button>"
-      $("#graphOptions").append(button);
-      dataObj[key] = [];
-      graphButtonsOnPage = true;
-    })
-
-    changeData(keys[0]);
-  }
-  setData(data);
+function buildGraphButtons(keys) {
+  $(".graphButtons").remove();
+  dataObj = {};
+  keys.forEach(key => {
+    var button = "<button class='graphButtons btn btn-default' id=\"" + key + "\" onclick='changeData(\"" + key + "\")'>" + key + "</button>"
+    $("#graphOptions").append(button);
+    dataObj[key] = [];
+  })
+  changeData(keys[0]);
+  graphButtonsOnPage = true;
   renderChart(chartVariable);
+}
+
+
+
+socket.on('chartData', data => {
+  if (graphButtonsOnPage) {
+    setData(data);
+    renderChart(chartVariable);
+  }
 })
 
 function changeData(key) {
-
   chartVariable = key;
   $(".graphButtons").removeClass('selectedButton');
   $("#" + chartVariable).addClass('selectedButton');

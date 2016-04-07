@@ -20,7 +20,7 @@ userController.createUser = function(req, res) {
       console.log('id: ', data.id)
       SessionCtrl.startSession(req, res, data._id);
       data.save();
-      res.redirect('/controller?id=' + data.id);
+      res.redirect('/splash?id=' + data.id);
     });
 };
 
@@ -32,7 +32,7 @@ userController.verify = function(req, res) {
       if (bcrypt.compareSync(req.body.password, doc.password)) {
         res.cookie('SSID', doc.id);
         SessionCtrl.startSession(req, res, doc._id);
-        return res.redirect('/controller?id=' + doc.id)
+        return res.redirect('/splash?id=' + doc.id)
       }
       // console.log('bye')
       return res.send('error: ', err);

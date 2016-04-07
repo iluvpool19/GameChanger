@@ -242,7 +242,7 @@
         $('#gameDescriptions').append('<h3></h3><a href="#"  onclick="selectGame(this)" class="gameSelector" id="' + i + '" data-dismiss="modal">' + data[i].name + '</a></h3><p>' + data[i].description + '</p>')
       }
 
-    }); 
+    });
 
 
     // builds controls and changes game
@@ -256,9 +256,10 @@
 
     function buildControls(game) {
       if (currentGame !== game) {
-        $('.graphButtons').remove();
-        graphButtonsOnPage = false;
+        // $('.graphButtons').remove();
+        // graphButtonsOnPage = false;
         $('#controllers tr td').remove();
+        buildGraphButtons(gameDescriptions[game].dataControlObject);
         ctrlObj = gameDescriptions[game].controlObject;
         currentGame = game;
         let ctrlCount = {};
@@ -277,28 +278,7 @@
             $('#controllers tr').append('<td width="' + 100 / numOfVars + '%"><h3>' + properSpacing(key) + '</h3><center><input type="text" value="' + ctrlObj[key].value + '" class="dial" id="' + key +
               '" data-step="' + ctrlObj[key].step + '" data-min="' + ctrlObj[key].min + '" data-max="' + ctrlObj[key].max + '" data-width="100" data-thickness="0.4" padding="20px"/></center></td>');
           }
-
-          // if (ctrlObj[key].type === 'button') {
-          //   buttons.push('<center><button class="controllerButton" id="' + key + '" onclick="emitButtonPush(this)">' + properSpacing(key) + '</button></center>')
-          // }
         }
-        // var buttonCell = '';
-        // var buttonCount = 0;
-        // buttons.forEach(button => {
-        //   if (buttonCount < buttonsPerCell) {
-        //     buttonCell += button;
-        //     buttonCount++;
-        //   } else {
-        //     $('#controllers tr').append('<td width="' + 100 / numOfVars + '%"><h3>Buttons</h3>' + buttonCell + '</td>');
-        //     buttonCell = '';
-        //     buttonCount = 0;
-        //   }
-        //   console.log(buttonCell);
-        // })
-        // console.log('button count: ', buttonCount);
-        // if (buttonCount > 0) {
-        //   $('#controllers tr').append('<td width="' + 100 / numOfVars + '%"><h3>Buttons</h3>' + buttonCell + '</td>');
-        // }
 
         $(document).ready(function($) {
           $(".dial").knob({
