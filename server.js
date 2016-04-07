@@ -82,7 +82,7 @@ function getDescriptions(games) {
 
 }
 
-
+// still need to add something...
 // find all games that exist and return array of folder names
 function getDirectories(srcPath) {
   return new Promise((resolve, reject) => {
