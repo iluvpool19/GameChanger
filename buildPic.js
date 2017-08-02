@@ -7,7 +7,7 @@ var phantomInstance;
 phantom.create().then(instance => {
   phantomInstance = instance;
 })
-
+//this is js comment
 
 module.exports = function buildPng(imgObj, socketNameSpace) {
   var nsp = socketNameSpace;
