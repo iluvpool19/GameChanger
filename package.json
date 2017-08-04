@@ -8,7 +8,6 @@
     "casper": "casperjs test ./tests/casperTest.js",
     "zombie": "mocha --timeout 8000 tests/zombieTests.js",
     "start": "npm run env NODE_ENV=production && node server.js",
-
     "start-dev": "nodemon server.js",
     "build-zip": "[ -e app.zip ] && rm app.zip && zip -r app.zip . -x '.git/*' -x 'tests/*' -x '.gitignore' -x 'node_modules/*'"
   },
